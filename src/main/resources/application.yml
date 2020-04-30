@@ -1,13 +1,8 @@
 spring:
   application:
     name: eureka-server-service
-
-server:
-  port: 8761
-
-eureka:
-  client:
-    register-with-eureka: false
-    fetch-registry: false
-  server:
-    wait-time-in-ms-when-sync-empty: 0
+  cloud:
+    config:
+      env: default # optional
+      label: master # optional
+      uri: ${CONFIG_SERVER:http://localhost:8888} # optional
